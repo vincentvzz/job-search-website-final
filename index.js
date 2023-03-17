@@ -80,3 +80,30 @@ document.getElementById("add-job-btn").addEventListener("click", async () => {
         console.log("failed to add the job:", e);
     }
 })
+
+// document.getElementById("extension-add-job").addEventListener("click", async () => {
+//     ext_company_list = localStorage.getItem("company_list");
+//     ext_username = localStorage.getItem("username");
+//     if (ext_company_list & ext_username & ext_company_list.length > 0) {
+//         try {
+//             const findUserQuery = query(userCollection, where("username", "==", ext_username));
+//             const userQueryResult = await getDocs(findUserQuery);
+//             if (userQueryResult.docs.length > 0) {
+//                 let ext_userid = userQueryResult.docs[0].id;
+//                 let ext_user_jobs = userQueryResult.docs[0].data()["jobs"];
+//                 for (let i = 0; i < ext_company_list.length; i++) {
+//                     ext_user_jobs.push(ext_company_list[i]);
+//                 }
+//                 await updateDoc(doc(db, "user", ext_userid), {
+//                     jobs: ext_user_jobs
+//                 });
+//                 if (ext_username === currentUser) {
+//                     currentJobs = ext_user_jobs;
+//                     render(displaySingleJob(currentJobs), document.querySelector(".job-list"));
+//                 }
+//             }
+//         } catch (e) {
+//             console.log("failed to add job from extension:", e);
+//         }
+//     }
+// })
