@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>job search</title>
+    
+    <script type="module" crossorigin src="/job-search-website-final/assets/index-dcf25bf8.js"></script>
+    <link rel="stylesheet" href="/job-search-website-final/assets/index-3f9ff78b.css">
+  </head>
+  <body>
+    <div class="website-title">Job Search Website</div>
+    <div class="login-container">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username"/>
+        <input type="button" id="login-btn" value="Log in/Sign up"/>
+        <div id="loggedin-username"></div>
+    </div>
+    <div class="add-job-container">
+        <div>Add your job here</div>
+        <form>
+            <label for="job-title">Job Title:</label>
+            <input type="text" id="job-title" name="job-title"/>
+            <label for="company-name">Company Name:</label>
+            <input type="text" id="company-name" name="company-name"/>
+            <label for="jd-link">Job Description Link:</label>
+            <input type="text" id="jd-link" name="jd-link"/>
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status"/>
+            <input type="button" id="add-job-btn" value="Add"/>
+        </form>
+    </div>
+    <div class="job-list-container">
+        <div>Your jobs:</div>
+        <div class="job-list"></div>
+    </div>
+    
+  </body>
+</html>
