@@ -29,10 +29,10 @@ function displaySingleJob(jobs) {
         ${jobs.map((job) => {
             return html`
             <div class="job">
-                <div>${job.title}</div>
-                <div>${job.companyName}</div>
-                <div>${job.jdLink}</div>
-                <div>${job.status}</div>
+                <div class="job-data">${job.title}</div>
+                <div class="job-data">${job.companyName}</div>
+                <div class="job-data"><a target="_blank" href="${job.jdLink}">${job.companyName + " job description link"}</a></div>
+                <div class="job-data">${job.status}</div>
             </div>`;
         })}
     `;

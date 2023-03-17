@@ -1,11 +1,69 @@
-* {
-    box-sizing: border-box;
-}
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 body {
-    margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+  color: black;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .website-title {
     color: blue;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.job-list-container {
+    margin-top: 10px;
+}
+
+.job-list-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3px;
+    margin-top: 20px;
+}
+
+.column-name {
+    display: flex;
+    align-items: center;
+    background-color: rgb(34, 141, 236);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    height: 30px;
+}
+
+.job {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3px;
+    height: 40px;
+}
+
+.job > div {
+    overflow: hidden;
+}
+
+.job-data {
+    padding: 10px;
+}
+
+.job-list {
+    margin-top: 10px;
+}
+
+.job:nth-child(odd) {
+    background-color: #7cd67f; /* background color for odd elements */
+}
+
+.job:nth-child(even) {
+    background-color: rgb(184, 234, 179); /* background color for even elements */
 }
