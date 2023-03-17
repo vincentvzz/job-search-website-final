@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "vite": "^4.2.0"
+  },
+  "scripts": {
+    "start": "vite",
+    "host": "vite --host",
+    "build": "vite build",
+    "preview": "vite build && vite preview",
+    "deploy": "vite build --base=/job-search-website-final/ && gh-pages -d dist"
+  },
+  "dependencies": {
+    "firebase": "^9.18.0",
+    "lit-html": "^2.6.1"
+  }
+}
