@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, query, where, doc, addDoc, setDoc, getDocs, updateDoc } from "firebase/firestore";
+import { getFirestore, collection, query, where, doc, addDoc, setDoc, getDocs, updateDoc, arrayRemove } from "firebase/firestore";
 import { html, render } from "lit-html";
 
 const firebaseConfig = {
@@ -26,13 +26,14 @@ let currentUserId = "";
 function displaySingleJob(jobs) {
 
     return html`
-        ${jobs.map((job) => {
+        ${jobs.map((job, index) => {
             return html`
             <div class="job">
                 <div class="job-data">${job.title}</div>
                 <div class="job-data">${job.companyName}</div>
                 <div class="job-data"><a target="_blank" href="${job.jdLink}">${job.companyName + " job description link"}</a></div>
                 <div class="job-data">${job.status}</div>
+                <div class="job-data delete-btn" id="${index}">Delete</div>
             </div>`;
         })}
     `;
@@ -78,6 +79,21 @@ document.getElementById("add-job-btn").addEventListener("click", async () => {
         render(displaySingleJob(currentJobs), document.querySelector(".job-list"));
     } catch (e) {
         console.log("failed to add the job:", e);
+    }
+})
+
+document.querySelector(".job-list").addEventListener("click", async (e) => {
+    if (e.target.classList.contains("delete-btn")) {
+        let curJobId = e.target.id;
+        currentJobs.splice(curJobId, 1);
+        try {
+            await updateDoc(doc(db, "user", currentUserId), {
+                jobs: currentJobs
+            });
+            render(displaySingleJob(currentJobs), document.querySelector(".job-list"));
+        } catch (e) {
+            console.log("failed to delete the job:", e);
+        }
     }
 })
 

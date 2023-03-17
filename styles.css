@@ -26,7 +26,7 @@ body {
 
 .job-list-columns {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 3px;
     margin-top: 20px;
 }
@@ -43,7 +43,7 @@ body {
 
 .job {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 3px;
     height: 40px;
 }
